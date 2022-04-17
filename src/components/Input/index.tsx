@@ -4,7 +4,7 @@ import './styles.css'
 
 interface InputProps {
     label?: React.ReactNode
-    error?: string
+    error?: string | null
     value: string | number
     onChange: ChangeEventHandler
 }

@@ -11,6 +11,7 @@
     background-color: lightseagreen;
     color: #fff;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .button:hover {
@@ -19,4 +20,8 @@
 
 .button:active {
     background-color: #17928b;
+}
+
+.button:disabled {
+    background-color: #999;
 }
