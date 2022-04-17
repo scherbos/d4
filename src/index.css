@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +18,43 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header {
+  height: 80px;
+  line-height: 80px;
+  padding: 0 30px;
+  font-size: 2.4rem;;
+  background-color: black;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.8rem;
+  }
+}
+
+.navigation {
+  background-color: #222;
+  padding: 0 35px;
+}
+
+.navigation a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navigation a.active {
+  color: #fff;
+  border-bottom: 3px solid lightseagreen;
+}
+
+.content {
+  padding: 35px;
 }
