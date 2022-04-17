@@ -5,7 +5,7 @@ import { getBirds } from '../../api'
 import './styles.css'
 
 export function BirdsChart() {
-    const [birds, setBirds] = React.useState()
+    const [birds, setBirds] = React.useState<[]>()
 
     React.useEffect(() => {
         getBirds()
@@ -14,6 +14,10 @@ export function BirdsChart() {
 
     if (!birds) {
         return null
+    }
+
+    if (birds.length == 0) {
+        return <div className="empty">No data</div>
     }
 
     const config = {
