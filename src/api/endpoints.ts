@@ -1,0 +1,1 @@
+export const birds = '/birds'
