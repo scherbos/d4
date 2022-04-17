@@ -1,6 +1,6 @@
 TODO:
 
-- create common components (button, heading, tabs, input)
+- create common components (button, heading, navlink, input) DONE
 - create feature components (birds form, chart view wrapper)
 - create 2 pages (input and dashboard)
 - create api service

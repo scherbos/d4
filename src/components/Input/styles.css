@@ -1,0 +1,31 @@
+.input {
+    position: relative;
+}
+
+.input-label {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-bottom: 3px;
+}
+
+.input-field {
+    display: block;
+    outline: none;
+    height: 42px;
+    line-height: 40px;
+    min-width: 200px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    padding: 0 10px;
+}
+
+.input-field.error {
+    border-color: red;
+}
+
+.input-error {
+    position: absolute;
+    top: calc(100% + 5px);
+    color: red;
+    font-size: 1.1rem;
+}

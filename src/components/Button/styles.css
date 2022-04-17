@@ -1,0 +1,22 @@
+.button {
+    outline: none;
+    border: none;
+    padding: 0;
+
+    min-width: 120px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    background-color: lightseagreen;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1ca39b;
+}
+
+.button:active {
+    background-color: #17928b;
+}
