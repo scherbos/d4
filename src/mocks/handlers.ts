@@ -1,5 +1,5 @@
 import { rest } from "msw"
-import { birds } from "../api/endpoints"
+import { Endpoints } from "../api/endpoints"
 import { baseUrl } from "../api"
 
 const BIRDS_KEY = 'birds'
@@ -7,12 +7,12 @@ const BIRDS_KEY = 'birds'
 export type Bird = { amount: number, date: number }
 
 export const handlers = [
-    rest.post(`${baseUrl}${birds}`, (req, res, ctx) => {
-        const birds = sessionStorage.getItem(BIRDS_KEY)
+    rest.post(`${baseUrl}${Endpoints.birds}`, (req, res, ctx) => {
+        const found = sessionStorage.getItem(BIRDS_KEY)
         
-        if (birds) {
-            const parsed = JSON.parse(birds) as Bird[]
-            sessionStorage.setItem(BIRDS_KEY, JSON.stringify([...parsed, req.body]))
+        if (found) {
+            const birds = JSON.parse(found) as Bird[]
+            sessionStorage.setItem(BIRDS_KEY, JSON.stringify([...birds, req.body]))
         } else {
             sessionStorage.setItem(BIRDS_KEY, JSON.stringify([req.body]))
         }
@@ -20,9 +20,9 @@ export const handlers = [
         return res(ctx.status(200), ctx.json({}))
     }),
 
-    rest.get(`${baseUrl}${birds}`, (req, res, ctx) => {
-        const birds = sessionStorage.getItem(BIRDS_KEY) || ''
-        const parsed = JSON.parse(birds) || []
-        return res(ctx.status(200), ctx.json(parsed))
+    rest.get(`${baseUrl}${Endpoints.birds}`, (req, res, ctx) => {
+        const found = sessionStorage.getItem(BIRDS_KEY)
+        const birds = found ? JSON.parse(found) : []
+        return res(ctx.status(200), ctx.json(birds))
     })
 ]

@@ -1,5 +1,5 @@
 import { Bird } from "../mocks/handlers"
-import { birds } from "./endpoints"
+import { Endpoints } from "./endpoints"
 
 export const baseUrl = 'http://localhost:3001'
 
@@ -34,9 +34,9 @@ export async function ApiService(path: string, options: Options) {
 }
 
 export function saveBirds(data: Bird) {
-    return ApiService(birds, { method: 'POST', data }).then(data => data)
+    return ApiService(Endpoints.birds, { method: 'POST', data }).then(data => data)
 }
 
 export function getBirds() {
-    return ApiService(birds, { method: 'GET' }).then(data => data)
+    return ApiService(Endpoints.birds, { method: 'GET' }).then(data => data)
 }

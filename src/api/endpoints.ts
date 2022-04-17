@@ -1,1 +1,3 @@
-export const birds = '/birds'
+export enum Endpoints {
+    birds = '/birds'
+}
