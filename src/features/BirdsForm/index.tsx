@@ -26,7 +26,7 @@ export function BirdsForm() {
 
         if (!error) {
             saveBirds({ amount: Number(birds), date: Date.now() })
-                .then(data => console.log('saved', data))
+                .finally(() => setBirds(''))
         }
     }
     return (

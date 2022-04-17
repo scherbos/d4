@@ -29,7 +29,7 @@ export function BirdsChart() {
           size: 5,
           shape: 'diamond',
         },
-      };
+      }
 
     return (
         <div className="chart">
