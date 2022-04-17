@@ -1,26 +1,12 @@
-import React, { ChangeEvent } from 'react'
-import { Button, Heading, Input } from '../components'
+import React from 'react'
+import { Heading } from '../components'
+import { BirdsForm } from '../features/BirdsForm'
 
 export function InputPage() {
-    const [birds, setBirds] = React.useState('')
-
-    const handleChangeBirds = (event: ChangeEvent<HTMLInputElement>) => {
-        const { value } = event.target
-        setBirds(value)
-    }
-
-    const handleSubmit = () => {
-        // send request
-    }
-
     return (
         <div>
             <Heading tag="h1">Input page</Heading>
-
-            <form onSubmit={handleSubmit}>
-                <Input label="Birds" error="invalid value" value={birds} onChange={handleChangeBirds} />
-                <Button type="submit">hello</Button>
-            </form>
+            <BirdsForm />
         </div>
     )
 }
